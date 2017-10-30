@@ -1,13 +1,8 @@
-import unittest
-import playlist_gen
+import re
 
-class URLValidation(unittest.TestCase):
-  def test_youtube(self):
-    self.assertTrue(playlist_gen.is_youtube('https://www.youtube.com/watch?v=A6rTvlgLUWk'))
-    self.assertTrue(playlist_gen.is_youtube('https://youtu.be/A6rTvlgLUWk'))
-    self.assertFalse(playlist_gen.is_youtube('not youtube'))
-    self.assertFalse(playlist_gen.is_youtube('https://soundcloud.com/noertheboy/half-tab-with-hapa'))
-
-
-if __name__ == '__main__':
-  unittest.main()
+def is_youtube(url):
+  youtube_regex = re.compile(
+      r'(https?://)?(www\.)?'
+      r'(youtube|youtu|youtube-nocookie)\.(com|be)/'
+      r'(watch\?v=|embed/|v/|.+\?v=)?([^&=%\?]{11})')
+  return not not youtube_regex.match(url)
