@@ -24,10 +24,9 @@ def is_valid_post(post):
 def get_posts(reddit, subreddit="listentothis"):
   posts = []
   for submission in reddit.subreddit(subreddit).hot():
-    if is_valid_post(submission):
+    if is_valid_post(submission) and is_youtube(submission.url):
       posts.append(submission.url)
-  print is_youtube(posts[0])
   return posts[:25]
 
 REDDIT = bot_login()
-# get_posts(reddit=REDDIT)
+get_posts(reddit=REDDIT)
