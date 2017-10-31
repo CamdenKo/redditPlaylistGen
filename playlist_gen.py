@@ -5,10 +5,10 @@ import url_validation
 
 def bot_login():
   return praw.Reddit(
-      username=config.username,
-      password=config.password,
-      client_id=config.client_id,
-      client_secret=config.client_secret,
+      username=config.r_username,
+      password=config.r_password,
+      client_id=config.r_client_id,
+      client_secret=config.r_client_secret,
       user_agent="playlistGenv1.0"
   )
 
