@@ -7,8 +7,6 @@ class URLValidation(unittest.TestCase):
     self.assertTrue(url_validation.is_youtube('https://youtu.be/A6rTvlgLUWk'))
     self.assertFalse(url_validation.is_youtube('not youtube'))
     self.assertFalse(url_validation.is_youtube('https://soundcloud.com/noertheboy/half-tab-with-hapa'))
-    self.assertTrue(False)
-
 
 if __name__ == '__main__':
   unittest.main()
