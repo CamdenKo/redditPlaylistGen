@@ -1,12 +1,13 @@
 import unittest
-import playlist_gen
+import url_validation
 
 class URLValidation(unittest.TestCase):
   def test_youtube(self):
-    self.assertTrue(playlist_gen.is_youtube('https://www.youtube.com/watch?v=A6rTvlgLUWk'))
-    self.assertTrue(playlist_gen.is_youtube('https://youtu.be/A6rTvlgLUWk'))
-    self.assertFalse(playlist_gen.is_youtube('not youtube'))
-    self.assertFalse(playlist_gen.is_youtube('https://soundcloud.com/noertheboy/half-tab-with-hapa'))
+    self.assertTrue(url_validation.is_youtube('https://www.youtube.com/watch?v=A6rTvlgLUWk'))
+    self.assertTrue(url_validation.is_youtube('https://youtu.be/A6rTvlgLUWk'))
+    self.assertFalse(url_validation.is_youtube('not youtube'))
+    self.assertFalse(url_validation.is_youtube('https://soundcloud.com/noertheboy/half-tab-with-hapa'))
+    self.assertTrue(False)
 
 
 if __name__ == '__main__':
